@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ログノー</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <div clsss="left">
+    <ul>
+      <li class="main_list">ホーム</li>
+      <li class="main_list">通知</li>
+      <li class="main_list prof">
+        <div class="icon">
+        </div><br>
+        <div class="p">
+          <br>
+          <%= current_user.name%>
+          <br><br>
+          <%= current_user.simple_word%><br><br>
+        </div>
+      </li>
+      <li class="main_list"><a href="/questions/new">投稿する</a></li>
+    </ul>
+  </div>
+
+  <div class="middle">
+    <% @quesitons.each do | question |%>
+    <div class="all_question">
+      <div class="user_icon"></div>
+      <li><%= question.user.name %>さんの質問<%= question.course_id%></p>
+      </li>
+      <p><%= question.title %></p>
+    </div>
+    <% end %>
+  </div>
+
+
+  <div class="right">
+    <input class="sarch" type="text" placeholder="キーワード検索">
+    <ul class="cour">
+      <p>コースカテゴリ</p>
+      <% @courses.each do |course|%>
+      <li><a href="/questions/<%= course.id%>/course"><%= course.name%></a></li>
+      <% end %>
+    </ul>
+  </div>
+</body>
+</html>
