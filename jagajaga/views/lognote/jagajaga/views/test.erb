@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="marked.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+</head>
+<body>
+
+<div id="content">
+  <form id="editor-form">
+    <textarea name="text" id="textarea" cols="30" rows="10"></textarea>
+  </form>
+</div>
+
+<div class="preview" id="headline"></div>
+
+<script>
+var markedText = document.getElementById("textarea")
+markedText.onkeydown = function() {
+  var html = marked(markedText.value)
+  document.querySelector("#headline").innerHTML = html
+};
+console.log("sdfgh")
+</script>
+</body>
+</html>
