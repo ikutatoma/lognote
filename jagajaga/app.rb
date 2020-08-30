@@ -20,7 +20,7 @@ get '/' do
   @courses = Course.all
   @users = User.all
   @quesitons = Question.all
-  erb :index
+  erb :test
    end
 end
 
@@ -93,9 +93,8 @@ post '/questions/:id' do
 end
 
 get '/questions/:id/course' do
-  courQues = Course.find_by(params[:id])
-  @courQues = courQues.questions
-  binding.pry
+  cour = Course.find(params[:id])
+  @courQues = cour.questions
   @courses =  Course.all
   erb :questions_course
 end

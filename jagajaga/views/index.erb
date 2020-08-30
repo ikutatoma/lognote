@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ログノー</title>
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
 </head>
 <body>
   <div clsss="left">
@@ -31,7 +30,7 @@
     <% @quesitons.each do | question |%>
     <div class="all_question">
       <div class="user_icon"></div>
-      <li><%= question.user.name %>さんの質問<%= question.course_id%></p>
+      <li><%= question.user.name %>さんの質問</p>
       </li>
       <p><%= question.title %></p>
     </div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="/style.css">
   <title>ログノー</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
     <% @courQues.each do | courQues |%>
     <div class="all_question">
       <div class="user_icon"></div>
-      <li><%= courQues.user.name %>さんの質問<%= courQues.course_id%></li>
+      <li><%= courQues.user.name %>さんの質問</li>
       <p><%= courQues.title%></p>
     </div>
     <% end %>
